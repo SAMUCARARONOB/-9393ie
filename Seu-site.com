@@ -23,7 +23,6 @@ UIGradient.Color = ColorSequence.new({
     ColorSequenceKeypoint.new(1.0, Color3.fromRGB(0, 128, 255))
 })
 
--- Adicionando sombra ao Frame
 local Shadow = Instance.new("Frame")
 Shadow.Parent = Frame
 Shadow.Size = Frame.Size + UDim2.new(0, 10, 0, 10)
@@ -43,6 +42,7 @@ Title.BackgroundTransparency = 1
 Title.Font = Enum.Font.SourceSansBold
 Title.TextSize = 32
 Title.TextStrokeTransparency = 0
+Title.TextStrokeColor3 = Color3.new(0, 0, 0)
 
 local SubTitle = Instance.new("TextLabel")
 SubTitle.Parent = Frame
@@ -53,6 +53,8 @@ SubTitle.TextColor3 = Color3.new(1, 1, 1)
 SubTitle.BackgroundTransparency = 1
 SubTitle.Font = Enum.Font.SourceSans
 SubTitle.TextSize = 24
+SubTitle.TextStrokeTransparency = 0.8
+SubTitle.TextStrokeColor3 = Color3.new(0, 0, 0)
 
 local TextBoxFrame = Instance.new("Frame")
 TextBoxFrame.Parent = Frame
@@ -92,7 +94,6 @@ local UICornerButton = Instance.new("UICorner")
 UICornerButton.Parent = ConfirmButton
 UICornerButton.CornerRadius = UDim.new(0, 10)
 
--- Adicionando botão de cópia
 local CopyButton = Instance.new("TextButton")
 CopyButton.Parent = Frame
 CopyButton.Size = UDim2.new(0.3, 0, 0.15, 0)
@@ -116,12 +117,9 @@ CopyButton.MouseButton1Click:Connect(function()
     CopyButton.Text = "CÓPIA"
 end)
 
--- Função de feedback ao clicar no botão Confirmar
 ConfirmButton.MouseButton1Click:Connect(function()
     if KeyInput.Text == "Key_A.SEO8CJ<%289÷2]8YE199DJPSSAMMMMDLDKFJFO20Ij" then
-        -- Destruir a interface
         ScreenGui:Destroy()
-        -- Executar o script fornecido
         loadstring(game:HttpGet("https://raw.githubusercontent.com/SAMUCARARONOB/92929923837373-/refs/heads/main/OPENKEYSMLCST"))()
     else
         ConfirmButton.Text = "Confirmado!"
@@ -142,7 +140,6 @@ InfoLabel.BackgroundTransparency = 1
 InfoLabel.Font = Enum.Font.SourceSans
 InfoLabel.TextSize = 20
 
--- Adicionando barra de progresso ao Frame
 local ProgressBar = Instance.new("Frame")
 ProgressBar.Parent = Frame
 ProgressBar.Size = UDim2.new(0.9, 0, 0.05, 0)
@@ -159,7 +156,6 @@ local UICornerProgress = Instance.new("UICorner")
 UICornerProgress.Parent = ProgressBar
 UICornerProgress.CornerRadius = UDim.new(0, 10)
 
--- Função para animar barra de progresso
 local function animateProgress(duration)
     ProgressFill:TweenSize(
         UDim2.new(1, 0, 1, 0),
@@ -170,13 +166,43 @@ local function animateProgress(duration)
     )
 end
 
--- Função para validar a chave inserida
 KeyInput.FocusLost:Connect(function(enterPressed)
     if enterPressed then
-        animateProgress(1) -- Duração da animação
-        wait(1) -- Espera a animação terminar
+        animateProgress(1)
+        wait(1)
         local valid = KeyInput.Text == "chave_correta"
-        InfoLabel.Text = valid and "Chave válida: Sim" or "Chave válida: Não"
         InfoLabel.TextColor3 = valid and Color3.new(0, 1, 0) or Color3.new(1, 0, 0)
     end
-    end)
+end)
+-- Efeitos de hover para os botões
+local function applyHoverEffect(button)
+    local originalColor = button.BackgroundColor3
+    button.MouseEnter:Connect(function()
+            button.BackgroundColor3 = button.BackgroundColor3:lerp(Color3.new(1, 1, 1), 0.2)
+        end)
+        button.MouseLeave:Connect(function()
+            button.BackgroundColor3 = originalColor
+        end)
+    end
+
+    applyHoverEffect(ConfirmButton)
+    applyHoverEffect(CopyButton)
+
+    -- Animações de transição para os elementos
+    local function applyTransitionAnimation(element)
+        element.Visible = false
+        wait(0.1)
+        element.Visible = true
+        element:TweenSize(element.Size + UDim2.new(0, 10, 0, 10), Enum.EasingDirection.Out, Enum.EasingStyle.Bounce, 1, true)
+    end
+
+    applyTransitionAnimation(Frame)
+    applyTransitionAnimation(Title)
+    applyTransitionAnimation(SubTitle)
+    applyTransitionAnimation(TextBoxFrame)
+    applyTransitionAnimation(KeyInput)
+    applyTransitionAnimation(ConfirmButton)
+    applyTransitionAnimation(CopyButton)
+    applyTransitionAnimation(InfoLabel)
+
+    print("Script de interface concluído com sucesso!")
