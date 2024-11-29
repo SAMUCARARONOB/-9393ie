@@ -5,7 +5,7 @@ ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 Frame.Parent = ScreenGui
 Frame.BackgroundColor3 = Color3.new(0.1, 0.1, 0.1)
 Frame.Size = UDim2.new(0, 600, 0, 300)
-Frame.Position = UDim2.new(0.5, -400, 0.5, -200)
+Frame.Position = UDim2.new(0.5, -300, 0.5, -150)
 Frame.Active = true
 Frame.Draggable = true
 Frame.BorderSizePixel = 5
@@ -101,9 +101,6 @@ local UICornerCopyButton = Instance.new("UICorner")
 UICornerCopyButton.Parent = CopyButton
 UICornerCopyButton.CornerRadius = UDim.new(0, 15)
 
-local ButtonShadowCopy = ButtonShadow:Clone()
-ButtonShadowCopy.Parent = CopyButton
-
 -- Função para copiar o texto ao clicar no botão de cópia
 CopyButton.MouseButton1Click:Connect(function()
     setclipboard("Key_A.SEO8CJ<%289÷2]8YE199DJPSSAMMMMDLDKFJFO20Ij")
@@ -165,8 +162,9 @@ KeyInput.FocusLost:Connect(function(enterPressed)
     if enterPressed then
         animateProgress(1)
         wait(3)
-        local valid = KeyInput.Text == "chave_correta"
+        local valid = KeyInput.Text == "Key_A.SEO8CJ<%289÷2]8YE199DJPSSAMMMMDLDKFJFO20Ij"
         InfoLabel.TextColor3 = valid and Color3.new(0, 1, 0) or Color3.new(1, 0, 0)
+        InfoLabel.Text = valid and "Chave válida: Sim" or "Chave válida: Não"
     end
 end)
 
@@ -201,4 +199,4 @@ applyTransitionAnimation(ConfirmButton)
 applyTransitionAnimation(CopyButton)
 applyTransitionAnimation(InfoLabel)
 
-print("Script de interface concluído com sucesso!")
+print("PARE DE OLHA O MEU SCRIPT SEU LADRÃO!")
