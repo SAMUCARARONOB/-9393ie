@@ -22,16 +22,7 @@ UIGradient.Color = ColorSequence.new({
     ColorSequenceKeypoint.new(0.0, Color3.fromRGB(0, 255, 255)),
     ColorSequenceKeypoint.new(1.0, Color3.fromRGB(0, 128, 255))
 })
-UIGradient.Rotation = 45  -- Adiciona uma rotação ao gradiente
-
-local Shadow = Instance.new("Frame")
-Shadow.Parent = Frame
-Shadow.Size = Frame.Size + UDim2.new(0, 15, 0, 15)
-Shadow.Position = Frame.Position + UDim2.new(0, 7.5, 0, 7.5)
-Shadow.BackgroundColor3 = Color3.new(0, 0, 0)
-Shadow.BorderSizePixel = 0
-Shadow.BackgroundTransparency = 0.5
-Shadow.ZIndex = 0
+UIGradient.Rotation = 45
 
 local Title = Instance.new("TextLabel")
 Title.Parent = Frame
