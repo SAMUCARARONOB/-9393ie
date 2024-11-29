@@ -95,15 +95,6 @@ local UICornerButton = Instance.new("UICorner")
 UICornerButton.Parent = ConfirmButton
 UICornerButton.CornerRadius = UDim.new(0, 15)
 
--- Adicionando um efeito de sombra ao botão
-local ButtonShadow = Instance.new("ImageLabel")
-ButtonShadow.Parent = ConfirmButton
-ButtonShadow.Size = UDim2.new(1, 8, 1, 8)
-ButtonShadow.Position = UDim2.new(0, -4, 0, -4)
-ButtonShadow.BackgroundTransparency = 1
-ButtonShadow.Image = "rbxassetid://1316045217"
-ButtonShadow.ImageTransparency = 0.5
-ButtonShadow.ZIndex = ConfirmButton.ZIndex - 1
 local CopyButton = Instance.new("TextButton")
 CopyButton.Parent = Frame
 CopyButton.Size = UDim2.new(0.3, 0, 0.15, 0)
