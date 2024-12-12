@@ -2,13 +2,13 @@ local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/Siri
 getgenv().SecureMode = true
 
 local Window = Rayfield:CreateWindow({
-	Name = "LINK Canal",
-	LoadingTitle = "OP-SCRIPTS LinkCanal",
+	Name = "KeySystem Canal",
+	LoadingTitle = "OP-SCRIPTS KeySystem",
 	LoadingSubtitle = "",
 })
 
-local Tab = Window:CreateTab("Link Canal Escreve-se", 4483362458)
-local SubscribeLabel = Tab:CreateLabel("Escreve-se Clique no Butão LINK CANAL Para Acessar o OP-SCRIPTS")
+local Tab = Window:CreateTab("KeySystem Canal Escreve-se", 4483362458)
+local SubscribeLabel = Tab:CreateLabel("Escreve-se")
 
 local initialLink = "https://www.youtube.com/@XROBLOSCRIPTS"
 local linkCopied = false
@@ -52,10 +52,10 @@ local CopyButton = Tab:CreateButton({
 
 		for i = 1, #phrases do
 			Tab:CreateLabel(phrases[i])
-			wait(0.3)
+			wait(0.1)
 		end
 
-		wait(1)
+		wait(0.5)
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/SAMUCARARONOB/92929923837373-/refs/heads/main/OPENKEYSMLCST"))()
 		print("Script executado.")
 	end,
@@ -109,116 +109,161 @@ local positiveTexts = {
 -- Adicionar ícones nos textos para dar um charme especial
 for i = 1, #positiveTexts do
 	InfoTab:CreateLabel("📌 " .. positiveTexts[i])
-	wait(0.1)
+	wait(0.2)
 end
 
--- Adicionar botões interativos com funcionalidades específicas
-local NightModeButton = InfoTab:CreateButton({
+-- Adicionar toggles interativos com funcionalidades específicas
+local nightMode = false
+local dayMode = false
+local rainMode = false
+local brightnessMode = false
+local fogMode = false
+local skyColorMode = false
+local playerSpeedMode = false
+
+local NightModeToggle = InfoTab:CreateToggle({
 	Name = "Deixar o mapa de noite",
-	Callback = function()
-		game.Lighting.ClockTime = 0
-		print("O mapa agora está de noite.")
+	Callback = function(value)
+		nightMode = value
+		if nightMode then
+			game.Lighting.ClockTime = 0
+			print("O mapa agora está de noite.")
+		else
+			game.Lighting.ClockTime = 14
+			print("O mapa voltou ao normal.")
+		end
 	end,
 })
 
-local DayModeButton = InfoTab:CreateButton({
+local DayModeToggle = InfoTab:CreateToggle({
 	Name = "Deixar o mapa de dia",
-	Callback = function()
-		game.Lighting.ClockTime = 14
-		print("O mapa agora está de dia.")
+	Callback = function(value)
+		dayMode = value
+		if dayMode then
+			game.Lighting.ClockTime = 14
+			print("O mapa agora está de dia.")
+		else
+			game.Lighting.ClockTime = 0
+			print("O mapa voltou ao normal.")
+		end
 	end,
 })
 
-local RainModeButton = InfoTab:CreateButton({
+local RainModeToggle = InfoTab:CreateToggle({
 	Name = "Ativar chuva",
-	Callback = function()
-		local rain = Instance.new("ParticleEmitter")
-		rain.Texture = "rbxassetid://244221440"
-		rain.Parent = game.Workspace
-		rain.Acceleration = Vector3.new(0, -10, 0)
-		rain.Lifetime = NumberRange.new(10)
-		rain.Rate = 1000
-		rain.Speed = NumberRange.new(5, 10)
-		print("Chuva ativada.")
-	end,
-})
-
-local ClearWeatherButton = InfoTab:CreateButton({
-	Name = "Limpar o tempo",
-	Callback = function()
-		for _, emitter in pairs(game.Workspace:GetDescendants()) do
-			if emitter:IsA("ParticleEmitter") then
-				emitter:Destroy()
+	Callback = function(value)
+		rainMode = value
+		if rainMode then
+			local rain = Instance.new("ParticleEmitter")
+			rain.Texture = "rbxassetid://244221440"
+			rain.Parent = game.Workspace
+			rain.Acceleration = Vector3.new(0, -10, 0)
+			rain.Lifetime = NumberRange.new(10)
+			rain.Rate = 1000
+			rain.Speed = NumberRange.new(5, 10)
+			print("Chuva ativada.")
+		else
+			for _, emitter in pairs(game.Workspace:GetDescendants()) do
+				if emitter:IsA("ParticleEmitter") then
+					emitter:Destroy()
+				end
 			end
+			print("Chuva desativada.")
 		end
-		print("O tempo está limpo.")
 	end,
 })
 
-local IncreaseBrightnessButton = InfoTab:CreateButton({
+local BrightnessToggle = InfoTab:CreateToggle({
 	Name = "Aumentar brilho",
-	Callback = function()
-		game.Lighting.Brightness = 3
-		print("Brilho aumentado.")
+	Callback = function(value)
+		brightnessMode = value
+		if brightnessMode then
+			game.Lighting.Brightness = 3
+			print("Brilho aumentado.")
+		else
+			game.Lighting.Brightness = 1
+			print("Brilho voltou ao normal.")
+		end
 	end,
 })
 
-local DecreaseBrightnessButton = InfoTab:CreateButton({
-	Name = "Diminuir brilho",
-	Callback = function()
-		game.Lighting.Brightness = 0.5
-		print("Brilho diminuído.")
-	end,
-})
-
--- Adicionar mais botões interativos com funcionalidades variadas
-local FogIncreaseButton = InfoTab:CreateButton({
+local FogToggle = InfoTab:CreateToggle({
 	Name = "Adicionar névoa",
-	Callback = function()
-		game.Lighting.FogEnd = 100
-		print("Névoa adicionada.")
+	Callback = function(value)
+		fogMode = value
+		if fogMode then
+			game.Lighting.FogEnd = 100
+			print("Névoa adicionada.")
+		else
+			game.Lighting.FogEnd = 100000
+			print("Névoa removida.")
+		end
 	end,
 })
 
-local FogRemoveButton = InfoTab:CreateButton({
-	Name = "Remover névoa",
-	Callback = function()
-		game.Lighting.FogEnd = 100000
-		print("Névoa removida.")
-	end,
-})
-
-local ChangeSkyColorButton = InfoTab:CreateButton({
+local SkyColorToggle = InfoTab:CreateToggle({
 	Name = "Mudar a cor do céu",
-	Callback = function()
-		game.Lighting.OutdoorAmbient = Color3.new(math.random(), math.random(), math.random())
-		print("A cor do céu foi alterada.")
+	Callback = function(value)
+		skyColorMode = value
+		if skyColorMode then
+			game.Lighting.OutdoorAmbient = Color3.new(math.random(), math.random(), math.random())
+			print("A cor do céu foi alterada.")
+		else
+			game.Lighting.OutdoorAmbient = Color3.new(128/255, 128/255, 128/255)
+			print("A cor do céu voltou ao normal.")
+		end
 	end,
 })
 
-local IncreasePlayerSpeedButton = InfoTab:CreateButton({
+local PlayerSpeedToggle = InfoTab:CreateToggle({
 	Name = "Aumentar velocidade dos jogadores",
-	Callback = function()
+	Callback = function(value)
+		playerSpeedMode = value
 		local players = game:GetService("Players")
 		for _, player in ipairs(players:GetPlayers()) do
 			if player.Character and player.Character:FindFirstChildOfClass("Humanoid") then
-				player.Character.Humanoid.WalkSpeed = 32
+				if playerSpeedMode then
+					player.Character.Humanoid.WalkSpeed = 32
+				else
+					player.Character.Humanoid.WalkSpeed = 16
+				end
 			end
 		end
-		print("Velocidade dos jogadores aumentada.")
+		print("Velocidade dos jogadores ajustada.")
 	end,
 })
 
-local DecreasePlayerSpeedButton = InfoTab:CreateButton({
+local DecreaseSpeedToggle = InfoTab:CreateToggle({
 	Name = "Diminuir velocidade dos jogadores",
-	Callback = function()
+	Callback = function(value)
 		local players = game:GetService("Players")
 		for _, player in ipairs(players:GetPlayers()) do
 			if player.Character and player.Character:FindFirstChildOfClass("Humanoid") then
-				player.Character.Humanoid.WalkSpeed = 8
+				if value then
+					player.Character.Humanoid.WalkSpeed = 8
+				else
+					player.Character.Humanoid.WalkSpeed = 16
+				end
 			end
 		end
-		print("Velocidade dos jogadores diminuída.")
+		print("Velocidade dos jogadores ajustada.")
+	end,
+})
+
+local DecreaseSpeedToggle = InfoTab:CreateToggle({
+	Name = "Diminuir velocidade dos jogadores",
+	Callback = function(value)
+		local players = game:GetService("Players")
+		for _, player in ipairs(players:GetPlayers()) do
+			if player.Character and player.Character:FindFirstChildOfClass("Humanoid") then
+				if value then
+					player.Character.Humanoid.WalkSpeed = 8
+				else
+					player.Character.Humanoid.WalkSpeed = 16
+				end
+			end
+		end
+		print("Velocidade dos jogadores ajustada.")
 	end,
 })
 
@@ -234,5 +279,5 @@ local feedbacks = {
 
 for i = 1, #feedbacks do
 	InfoTab:CreateLabel(feedbacks[i])
-	wait(0.2)
+	wait(0.3)
 end
