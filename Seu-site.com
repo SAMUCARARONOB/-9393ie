@@ -2,13 +2,13 @@ local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/Siri
 getgenv().SecureMode = true
 
 local Window = Rayfield:CreateWindow({
-	Name = "KeySystem Canal",
-	LoadingTitle = "OP-SCRIPTS KeySystem",
+	Name = "Acesso LINK Canal",
+	LoadingTitle = "OP-SCRIPTS Acesso Link",
 	LoadingSubtitle = "",
 })
 
-local Tab = Window:CreateTab("KeySystem Canal Escreve-se", 4483362458)
-local SubscribeLabel = Tab:CreateLabel("Escreve-se")
+local Tab = Window:CreateTab("Link Acesso OP-SCRIPTS Canal Escreve-se", 4483362458)
+local SubscribeLabel = Tab:CreateLabel("Escreve-se", 6031280882)
 
 local initialLink = "https://www.youtube.com/@XROBLOSCRIPTS"
 local linkCopied = false
@@ -21,7 +21,7 @@ end
 
 -- Script do botão
 local CopyButton = Tab:CreateButton({
-	Name = "LINK CANAL",
+	Name = "LINK CANAL ACESSO OP-SCRIPTS",
 	Callback = function()
 		if not linkCopied then
 			setclipboard(initialLink)
@@ -53,7 +53,7 @@ local CopyButton = Tab:CreateButton({
 
 		for i = 1, #phrases do
 			Tab:CreateLabel(phrases[i])
-			wait(0.3)
+			wait(0.2)
 		end
 
 		wait(1)
