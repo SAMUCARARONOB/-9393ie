@@ -112,7 +112,8 @@ for i = 1, #positiveTexts do
 	wait(0.1)
 end
 
--- Adicionar toggles interativos com funcionalidades específicas
+InfoTab:CreateLabel("FUNÇÕES EXTRAS")
+
 local nightMode = false
 local dayMode = false
 local rainMode = false
