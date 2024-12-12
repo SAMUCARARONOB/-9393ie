@@ -250,23 +250,6 @@ local DecreaseSpeedToggle = InfoTab:CreateToggle({
 	end,
 })
 
-local DecreaseSpeedToggle = InfoTab:CreateToggle({
-	Name = "Diminuir velocidade dos jogadores",
-	Callback = function(value)
-		local players = game:GetService("Players")
-		for _, player in ipairs(players:GetPlayers()) do
-			if player.Character and player.Character:FindFirstChildOfClass("Humanoid") then
-				if value then
-					player.Character.Humanoid.WalkSpeed = 8
-				else
-					player.Character.Humanoid.WalkSpeed = 16
-				end
-			end
-		end
-		print("Velocidade dos jogadores ajustada.")
-	end,
-})
-
 -- Adicionar seções de feedback de usuários
 local feedbacks = {
 	"\"Ótimos scripts! Estou adorando cada atualização!\" - Usuário A MIGU843",
