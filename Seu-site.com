@@ -62,7 +62,7 @@ local CopyButton = Tab:CreateButton({
 })
 
 -- Nova aba com informações positivas e elementos interativos
-local InfoTab = Window:CreateTab("Informação/Functions", 4483362458)
+local InfoTab = Window:CreateTab("Informação/Functions", 6031280882)
 
 local positiveTexts = {
 	"Atualizo meu script todos os dias!",
@@ -112,7 +112,7 @@ for i = 1, #positiveTexts do
 	wait(0.1)
 end
 
-InfoTab:CreateLabel("FUNÇÕES EXTRAS")
+InfoTab:CreateLabel("FUNÇÕES EXTRAS",6031280882)
 
 local nightMode = false
 local dayMode = false
