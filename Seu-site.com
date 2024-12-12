@@ -251,13 +251,33 @@ local DecreaseSpeedToggle = InfoTab:CreateToggle({
 	end,
 })
 
--- Adicionar seções de feedback de usuários
+InfoTab:CreateLabel("Feedbacks", 4483362458)
+
 local feedbacks = {
 	"\"Ótimos scripts! Estou adorando cada atualização!\" - Usuário A MIGU843",
 	"\"Este canal realmente se supera, sempre trazendo o melhor!\" - Usuário OGHLAPO",
 	"\"Nunca vi scripts tão bons e bem feitos!\" - Usuário BIANCA10KICA",
 	"\"Incrível como conseguem manter a qualidade em cada script novo!\" - Usuário LEVI_AQUENAN",
 	"\"Recomendo a todos que se inscrevam e acompanhem!\" - Usuário RIP_RARO",
+        "\"Ótimos scripts! Estou adorando cada atualização!\" - TheGamerX",
+	"\"Este canal realmente se supera, sempre trazendo o melhor!\" - MasterBuilder123",
+	"\"Nunca vi scripts tão bons e bem feitos!\" - CoolRobloxian",
+	"\"Incrível como conseguem manter a qualidade em cada script novo!\" - ProScripter",
+	"\"Recomendo a todos que se inscrevam e acompanhem!\" - BuildNPlay",
+	"\"Melhor canal de scripts que já encontrei!\" - SpeedyCoder",
+	"\"Os scripts são muito fáceis de usar e sempre funcionam bem.\" - ScriptWizard",
+	"\"Muito obrigado pelos conteúdos incríveis!\" - GamerGirl42",
+	"\"Sempre fico ansioso pelas novas atualizações!\" - NoobMaster69",
+	"\"A comunidade é muito amigável e útil.\" - EpicPlayer98",
+	"\"Nunca tive problemas com os scripts, são sempre de alta qualidade.\" - StarDeveloper",
+	"\"Agradeço pelo excelente trabalho!\" - BuilderPro321",
+	"\"Melhor lugar para encontrar scripts atualizados!\" - ScriptNinja21",
+	"\"Recomendo demais, vale a pena se inscrever no canal!\" - TopBuilder55",
+	"\"O suporte que recebo é sempre rápido e eficiente.\" - FastCoder99",
+	"\"Scripts novos todos os dias, é incrível!\" - MegaGamer",
+	"\"Muito satisfeito com os conteúdos do canal.\" - ProPlayer88",
+	"\"Sempre inovando e trazendo novidades!\" - GameMaster34",
+	"\"A qualidade dos scripts é impressionante.\" - CoderPro77",
         "\"+999 Players!\" - Usuários de Roblox"
 }
 
