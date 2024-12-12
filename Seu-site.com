@@ -2,13 +2,13 @@ local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/Siri
 getgenv().SecureMode = true
 
 local Window = Rayfield:CreateWindow({
-	Name = "KeySystem Canal",
-	LoadingTitle = "OP-SCRIPTS KeySystem",
-	LoadingSubtitle = "",
+	Name = "LINK CANAL Canal",
+	LoadingTitle = "OP-SCRIPTS LINK CANAL",
+	LoadingSubtitle = "OP-SCRIPTS",
 })
 
-local Tab = Window:CreateTab("KeySystem Canal Escreve-se", 4483362458)
-local SubscribeLabel = Tab:CreateLabel("Escreve-se")
+local Tab = Window:CreateTab("Link Canal Escreve-se", 4483362458)
+local SubscribeLabel = Tab:CreateLabel("Escreve-se E Clique no Butão LINK CANAL Para Abrir OP-SCRIPTS", 4483362458)
 
 local initialLink = "https://www.youtube.com/@XROBLOSCRIPTS"
 local linkCopied = false
@@ -62,7 +62,7 @@ local CopyButton = Tab:CreateButton({
 })
 
 -- Nova aba com informações positivas e elementos interativos
-local InfoTab = Window:CreateTab("Informação Canal", 4483362458)
+local InfoTab = Window:CreateTab("Informação/Functions", 4483362458)
 
 local positiveTexts = {
 	"Atualizo meu script todos os dias!",
@@ -109,7 +109,7 @@ local positiveTexts = {
 -- Adicionar ícones nos textos para dar um charme especial
 for i = 1, #positiveTexts do
 	InfoTab:CreateLabel("📌 " .. positiveTexts[i])
-	wait(0.2)
+	wait(0.1)
 end
 
 -- Adicionar toggles interativos com funcionalidades específicas
@@ -279,5 +279,5 @@ local feedbacks = {
 
 for i = 1, #feedbacks do
 	InfoTab:CreateLabel(feedbacks[i])
-	wait(0.3)
+	wait(0.5)
 end
