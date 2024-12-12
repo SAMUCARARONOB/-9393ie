@@ -2,13 +2,13 @@ local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/Siri
 getgenv().SecureMode = true
 
 local Window = Rayfield:CreateWindow({
-	Name = "LINK CANAL Canal",
+	Name = "LINK CANAL",
 	LoadingTitle = "OP-SCRIPTS LINK CANAL",
 	LoadingSubtitle = "OP-SCRIPTS",
 })
 
 local Tab = Window:CreateTab("Link Canal Escreve-se", 4483362458)
-local SubscribeLabel = Tab:CreateLabel("Escreve-se E Clique no Butão LINK CANAL Para Abrir OP-SCRIPTS", 4483362458)
+local SubscribeLabel = Tab:CreateLabel("Escreve-se E Clique no Butão LINK CANAL Para Abrir OP-SCRIPTS", 6031280883)
 
 local initialLink = "https://www.youtube.com/@XROBLOSCRIPTS"
 local linkCopied = false
