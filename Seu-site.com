@@ -14,9 +14,9 @@ local initialLink = "https://www.youtube.com/@XROBLOSCRIPTS"
 local linkCopied = false
 
 -- Script dos segundos
-for i = 1, 5 do
+for i = 1, 3 do
 	Tab:CreateLabel(i .. " Seconds")
-	wait(0.2)
+	wait(0.3)
 end
 
 -- Script do botão
