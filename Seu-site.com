@@ -2,13 +2,13 @@ local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/Siri
 getgenv().SecureMode = true
 
 local Window = Rayfield:CreateWindow({
-	Name = "KeySystem Canal",
-	LoadingTitle = "OP-SCRIPTS KeySystem",
+	Name = "LINK Canal",
+	LoadingTitle = "OP-SCRIPTS LinkCanal",
 	LoadingSubtitle = "",
 })
 
-local Tab = Window:CreateTab("KeySystem Canal Escreve-se", 4483362458)
-local SubscribeLabel = Tab:CreateLabel("Escreve-se")
+local Tab = Window:CreateTab("Link Canal Escreve-se", 4483362458)
+local SubscribeLabel = Tab:CreateLabel("Escreve-se Clique no Butão LINK CANAL Para Acessar o OP-SCRIPTS")
 
 local initialLink = "https://www.youtube.com/@XROBLOSCRIPTS"
 local linkCopied = false
@@ -16,7 +16,7 @@ local linkCopied = false
 -- Script dos segundos
 for i = 1, 5 do
 	Tab:CreateLabel(i .. " Seconds")
-	wait(0.3)
+	wait(0.2)
 end
 
 -- Script do botão
