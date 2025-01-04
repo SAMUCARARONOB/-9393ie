@@ -1,166 +1,174 @@
+local TweenService = game:GetService("TweenService")
+
 local gui = Instance.new("ScreenGui")
 gui.Parent = game.Players.LocalPlayer.PlayerGui
 gui.ResetOnSpawn = false 
 
 local frame = Instance.new("Frame")
-frame.Size = UDim2.new(0.7, 0, 1, 0)
+frame.Size = UDim2.new(0, 0, 0, 0)
 frame.AnchorPoint = Vector2.new(0.5, 0.5)
 frame.Position = UDim2.new(0.5, 0, 0.5, 0)
-frame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-frame.BorderColor3 = Color3.new(0, 0, 0)
+frame.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+frame.BackgroundTransparency = 0.1
 frame.BorderSizePixel = 0
 frame.Active = true
-frame.BackgroundTransparency = 0 
 frame.Draggable = true
 frame.Parent = gui
 
-local bruh = Instance.new("UICorner")
-bruh.CornerRadius = UDim.new(0, 7)
-bruh.Parent = frame
+local frameCorner = Instance.new("UICorner")
+frameCorner.CornerRadius = UDim.new(0, 10)
+frameCorner.Parent = frame
 
-local bruh1 = Instance.new("TextLabel")
-bruh1.Size = UDim2.new(0.3, 0, 0.15, 0)
-bruh1.Position = UDim2.new(0.35, 0, 0.1, 0)
-bruh1.BackgroundColor3 = Color3.new(0, 0, 0)
-bruh1.BorderColor3 = Color3.new(0, 0, 0)
-bruh1.BorderSizePixel = 1
-bruh1.Text = "KEY SYSTEM GUI" --Name of your script
-bruh1.BackgroundTransparency = 1
-bruh1.TextColor3 = Color3.new(255, 255, 255)
-bruh1.Font = Enum.Font.SourceSansBold
-bruh1.TextSize = 40
-bruh1.Parent = frame
+local title = Instance.new("TextLabel")
+title.Size = UDim2.new(1, 0, 0.15, 0)
+title.Position = UDim2.new(0, 0, 0, 0)
+title.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+title.BorderSizePixel = 0
+title.Text = "KEY OP-SCRIPTS"
+title.TextColor3 = Color3.fromRGB(255, 255, 255)
+title.Font = Enum.Font.GothamBold
+title.TextSize = 30
+title.Parent = frame
 
-local bruh2 = Instance.new("TextLabel")
-bruh2.Size = UDim2.new(0.3, 0, 0.15, 0)
-bruh2.Position = UDim2.new(0.35, 0, 0.22, 0)
-bruh2.BackgroundColor3 = Color3.new(0, 0, 0)
-bruh2.BorderColor3 = Color3.new(0, 0, 0)
-bruh2.BorderSizePixel = 0
-bruh2.Text = "Get Key System"
-bruh2.BackgroundTransparency = 1
-bruh2.TextColor3 = Color3.new(255, 255, 255)
-bruh2.Font = Enum.Font.SourceSans
-bruh2.TextSize = 30
-bruh2.Parent = frame
+local subtitle = Instance.new("TextLabel")
+subtitle.Size = UDim2.new(1, 0, 0.1, 0)
+subtitle.Position = UDim2.new(0, 0, 0.15, 0)
+subtitle.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+subtitle.BorderSizePixel = 0
+subtitle.Text = "Get Key System Premium Free"
+subtitle.TextColor3 = Color3.fromRGB(200, 200, 200)
+subtitle.Font = Enum.Font.Gotham
+subtitle.TextSize = 20
+subtitle.Parent = frame
 
-local bruh3 = Instance.new("TextBox")
-bruh3.Size = UDim2.new(0.499, 0, 0.18, 0)
-bruh3.Position = UDim2.new(0.25, 0, 0.43, 0)
-bruh3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-bruh3.BorderColor3 = Color3.new(0, 0, 0)
-bruh3.BorderSizePixel = 0
-bruh3.PlaceholderText = "OP-SCRIPTS"
-bruh3.Text = "GET KEY"
-bruh3.TextColor3 = Color3.fromRGB(255, 255, 255)
-bruh3.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
-bruh3.BackgroundTransparency = 1
-bruh3.Font = Enum.Font.Code
-bruh3.TextSize = 15
-bruh3.TextXAlignment = Enum.TextXAlignment.Center
-bruh3.Parent = frame
+local keyBox = Instance.new("TextBox")
+keyBox.Size = UDim2.new(0.8, 0, 0.1, 0)
+keyBox.Position = UDim2.new(0.1, 0, 0.4, 0)
+keyBox.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+keyBox.BorderSizePixel = 0
+keyBox.PlaceholderText = "PREMIUM KEY"
+keyBox.Text = ""
+keyBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+keyBox.PlaceholderColor3 = Color3.fromRGB(100, 100, 100)
+keyBox.Font = Enum.Font.Gotham
+keyBox.TextSize = 20
+keyBox.Parent = frame
 
-local bruh4 = Instance.new("UICorner")
-bruh4.CornerRadius = UDim.new(0, 5)
-bruh4.Parent = bruh3
+local keyBoxCorner = Instance.new("UICorner")
+keyBoxCorner.CornerRadius = UDim.new(0, 5)
+keyBoxCorner.Parent = keyBox
 
-local bruh5 = Instance.new("UIStroke")
-bruh5.Color = Color3.new(1, 1, 1)
-bruh5.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-bruh5.Thickness = 2
-bruh5.Parent = bruh3
+local getKeyBtn = Instance.new("TextButton")
+getKeyBtn.Size = UDim2.new(0.35, 0, 0.1, 0)
+getKeyBtn.Position = UDim2.new(0.1, 0, 0.6, 0)
+getKeyBtn.BackgroundColor3 = Color3.fromRGB(0, 100, 0)
+getKeyBtn.BorderSizePixel = 0
+getKeyBtn.Text = "Get Key"
+getKeyBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+getKeyBtn.Font = Enum.Font.Gotham
+getKeyBtn.TextSize = 20
+getKeyBtn.Parent = frame
 
-local bruh6 = Instance.new("TextButton")
-bruh6.Size = UDim2.new(0.3, 0, 0.18, 0)
-bruh6.Position = UDim2.new(0.1, 0, 0.73, 0)
-bruh6.BackgroundColor3 = Color3.new(0, 0, 0)
-bruh6.BorderColor3 = Color3.new(0, 0, 0)
-bruh6.BorderSizePixel = 0
-bruh6.Text = "Get Key"
-bruh6.BackgroundTransparency = 1
-bruh6.TextColor3 = Color3.new(255, 255, 255)
-bruh6.Font = Enum.Font.SourceSans
-bruh6.TextSize = 25
-bruh6.Parent = frame
+ local getKeyBtnCorner = Instance.new("UICorner")
+getKeyBtnCorner.CornerRadius = UDim.new(0, 5)
+getKeyBtnCorner.Parent = getKeyBtn
 
-local bruh7 = Instance.new("UICorner")
-bruh7.CornerRadius = UDim.new(0, 5)
-bruh7.Parent = bruh6
+local getKeyIcon = Instance.new("ImageLabel")
+getKeyIcon.Size = UDim2.new(0.1, 0, 0.5, 0)
+getKeyIcon.Position = UDim2.new(0, 0, 0.25, 0)
+getKeyIcon.Image = "rbxassetid://14317581285"
+getKeyIcon.BackgroundTransparency = 1
+getKeyIcon.Parent = getKeyBtn
 
-local bruh8 = Instance.new("UIStroke")
-bruh8.Color = Color3.new(1, 1, 1)
-bruh8.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-bruh8.Thickness = 2
-bruh8.Parent = bruh6
+getKeyBtn.MouseEnter:Connect(function()
+    getKeyBtn.BackgroundColor3 = Color3.fromRGB(0, 120, 0)
+end)
 
-local bruh9 = Instance.new("TextButton")
-bruh9.Size = UDim2.new(0.3, 0, 0.18, 0)
-bruh9.Position = UDim2.new(0.6, 0, 0.73, 0)
-bruh9.BackgroundColor3 = Color3.new(0, 0, 0)
-bruh9.BorderColor3 = Color3.new(0, 0, 0)
-bruh9.BorderSizePixel = 0
-bruh9.Text = "Check Key"
-bruh9.BackgroundTransparency = 1
-bruh9.TextColor3 = Color3.new(255, 255, 255)
-bruh9.Font = Enum.Font.SourceSans
-bruh9.TextSize = 25
-bruh9.Parent = frame
+getKeyBtn.MouseLeave:Connect(function()
+    getKeyBtn.BackgroundColor3 = Color3.fromRGB(0, 100, 0)
+end)
 
-local bruh10 = Instance.new("UICorner")
-bruh10.CornerRadius = UDim.new(0, 5)
-bruh10.Parent = bruh9
+local checkKeyBtn = Instance.new("TextButton")
+checkKeyBtn.Size = UDim2.new(0.35, 0, 0.1, 0)
+checkKeyBtn.Position = UDim2.new(0.55, 0, 0.6, 0)
+checkKeyBtn.BackgroundColor3 = Color3.fromRGB(0, 0, 100)
+checkKeyBtn.BorderSizePixel = 0
+checkKeyBtn.Text = "Check Key"
+checkKeyBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+checkKeyBtn.Font = Enum.Font.Gotham
+checkKeyBtn.TextSize = 20
+checkKeyBtn.Parent = frame
 
-local bruh11 = Instance.new("UIStroke")
-bruh11.Color = Color3.new(1, 1, 1)
-bruh11.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-bruh11.Thickness = 2
-bruh11.Parent = bruh9
+local checkKeyBtnCorner = Instance.new("UICorner")
+checkKeyBtnCorner.CornerRadius = UDim.new(0, 5)
+checkKeyBtnCorner.Parent = checkKeyBtn
 
--- Adiciona botão X para fechar a interface
+local checkKeyIcon = Instance.new("ImageLabel")
+checkKeyIcon.Size = UDim2.new(0.1, 0, 0.5, 0)
+checkKeyIcon.Position = UDim2.new(0, 0, 0.25, 0)
+checkKeyIcon.Image = "rbxassetid://4483362458"
+checkKeyIcon.BackgroundTransparency = 1
+checkKeyIcon.Parent = checkKeyBtn
+
+checkKeyBtn.MouseEnter:Connect(function()
+    checkKeyBtn.BackgroundColor3 = Color3.fromRGB(0, 0, 120)
+end)
+
+checkKeyBtn.MouseLeave:Connect(function()
+    checkKeyBtn.BackgroundColor3 = Color3.fromRGB(0, 100, 0)
+end)
+
 local closeButton = Instance.new("ImageButton")
 closeButton.Size = UDim2.new(0.05, 0, 0.1, 0)
 closeButton.Position = UDim2.new(0.95, -10, 0, 10)
-closeButton.Image = "rbxasset://textures/ui/ScreenshotHud/Close.png"
+closeButton.Image = "rbxassetid://6035047409"
 closeButton.BackgroundTransparency = 1
 closeButton.Parent = frame
 
--- Função para gerar uma chave aleatória
-local function gerarChaveAleatoria()
-    local caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+[]{}|;:',.<>?/"
-    local tamanho = math.random(20, 77)
-    local chave = ""
-    for i = 1, tamanho do
-        local indice = math.random(1, #caracteres)
-        chave = chave .. string.sub(caracteres, indice, indice)
+local function generateKey()
+    local chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+[]{}|;:',.<>?/"
+    local length = math.random(20, 77)
+    local key = ""
+    for i = 1, length do
+        local index = math.random(1, #chars)
+        key = key .. string.sub(chars, index, index)
     end
-    return chave
+    return key
 end
 
-local key -- Chave aleatória
-local keyGerada = false -- Verifica se a chave já foi gerada
+local key 
+local keyGenerated = false
 
-bruh6.MouseButton1Click:Connect(function()
-    if not keyGerada then
-        key = gerarChaveAleatoria()
+getKeyBtn.MouseButton1Click:Connect(function()
+    if not keyGenerated then
+        key = generateKey()
         setclipboard(key)
-        keyGerada = true
+        keyGenerated = true
     end
 end)
 
-bruh9.MouseButton1Click:Connect(function()
-    if bruh3.Text == key then
-        bruh3.Text = "Valid Key"
+checkKeyBtn.MouseButton1Click:Connect(function()
+    if keyBox.Text == key then
+        keyBox.Text = "Valid Key"
         wait(1)
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/SAMUCARARONOB/92929923837373-/refs/heads/main/OPENKEYSMLCST"))() -- Executa o script desejado
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SAMUCARARONOB/92929923837373-/refs/heads/main/OPENKEYSMLCST"))()
         gui:Destroy()
     else
-        bruh3.Text = "Invalid Key! Try Again"
+        keyBox.Text = "Invalid Key! Try Again"
         wait(1)
-        bruh3.Text = "Invalid✖️"
+        keyBox.Text = "Invalid✖️"
     end
 end)
 
--- Função para destruir a interface quando o botão X for clicado
 closeButton.MouseButton1Click:Connect(function()
-  gui:Destroy()
+    gui:Destroy()
 end)
+
+local function animateUI()
+    frame.Size = UDim2.new(0, 0, 0, 0)
+    local tweenInfo = TweenInfo.new(2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+    local goal = {Size = UDim2.new(0.7, 0, 1.0, 0)}
+    TweenService:Create(frame, tweenInfo, goal):Play()
+end
+
+animateUI()
