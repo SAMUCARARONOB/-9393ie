@@ -127,7 +127,7 @@ closeButton.Parent = frame
 
 local function generateKey()
     local chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+[]{}|;:',.<>?/"
-    local length = math.random(20, 77)
+    local length = math.random(15, 55)
     local key = ""
     for i = 1, length do
         local index = math.random(1, #chars)
