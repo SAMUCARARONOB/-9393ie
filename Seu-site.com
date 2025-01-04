@@ -50,7 +50,7 @@ bruh3.Position = UDim2.new(0.25, 0, 0.43, 0)
 bruh3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 bruh3.BorderColor3 = Color3.new(0, 0, 0)
 bruh3.BorderSizePixel = 0
-bruh3.PlaceholderText = "PREMIUM KEY SYSTEM"
+bruh3.PlaceholderText = "OP-SCRIPTS"
 bruh3.Text = "GET KEY"
 bruh3.TextColor3 = Color3.fromRGB(255, 255, 255)
 bruh3.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
@@ -150,7 +150,7 @@ end)
 bruh9.MouseButton1Click:Connect(function()
     if bruh3.Text == key then
         bruh3.Text = "Valid Key"
-        wait(0.00000000000001)
+        wait(1)
         loadstring(game:HttpGet("https://raw.githubusercontent.com/SAMUCARARONOB/92929923837373-/refs/heads/main/OPENKEYSMLCST"))() -- Executa o script desejado
         gui:Destroy()
     else
@@ -158,4 +158,9 @@ bruh9.MouseButton1Click:Connect(function()
         wait(1)
         bruh3.Text = "Invalid✖️"
     end
+end)
+
+-- Função para destruir a interface quando o botão X for clicado
+closeButton.MouseButton1Click:Connect(function()
+  gui:Destroy()
 end)
