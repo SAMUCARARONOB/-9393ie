@@ -60,7 +60,7 @@ keyBox.BorderSizePixel = 0
 keyBox.PlaceholderText = "PREMIUM KEY"
 keyBox.Text = ""
 keyBox.TextColor3 = Color3.fromRGB(255, 255, 255)
-keyBox.PlaceholderColor3 = Color3.fromRGB(255, 255, 0)
+keyBox.PlaceholderColor3 = Color3.fromRGB(100, 100, 0)
 keyBox.Font = Enum.Font.Gotham
 keyBox.TextSize = 20
 keyBox.Parent = frame
@@ -110,7 +110,7 @@ local function generateAndDisplayKeys()
         keyLabel.Size = UDim2.new(1, 0, 0, 25)
         keyLabel.BackgroundTransparency = 1
         keyLabel.Text = key
-        keyLabel.TextColor3 = Color3.fromRGB(0, 255, 255)
+        keyLabel.TextColor3 = Color3.fromRGB(100, 100, 100)
         keyLabel.Font = Enum.Font.Gotham
         keyLabel.TextSize = 14
         keyLabel.Parent = scrollingFrame
